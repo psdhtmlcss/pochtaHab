@@ -18,6 +18,10 @@ body {
   margin: 0;
   display: flex;
   flex-direction: column;
+
+  &.modal-active {
+    overflow: hidden;
+  }
 }
 
 .bg {
@@ -125,5 +129,172 @@ p {
   cursor: pointer;
   width: 277px;
   margin: 0 auto;
+  transition: all .15s ease-in-out;
+
+  &:hover {
+    @media screen and (min-width: 1024px) {
+      transform: scale(120%)
+    }
+  }
+
+  &-green {
+    background: linear-gradient(180deg, #1FD87C 0%, #02984D 100%);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.13);
+    color: white;
+
+    &:hover {
+      transform: none;
+    }
+  }
 }
 
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.form-control {
+  background-color: #fff;
+  width: 277px;
+  height: 51px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.13);
+  border-radius: 5px;
+  border: 0;
+  padding: 0 10px;
+  font-size: 16px;
+  font-weight: 500;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.modal-close {
+  position: absolute;
+  z-index: 40;
+  top: 30px;
+  right: 30px;
+  width: 25px;
+  height: 25px;
+  background-color: transparent;
+  border: 0;
+  outline: none;
+  padding: 0;
+  cursor: pointer;
+
+  @media screen and (max-width: 767px) {
+    top: 15px;
+    right: 15px;
+  }
+}
+
+// Modal animate
+#modal-container {
+  position:fixed;
+  display:flex;
+  height:100%;
+  width:100%;
+  top:0;
+  left:0;
+  transform:scale(0);
+  z-index:10;
+
+  &.one {
+    transform:scaleY(.01) scaleX(0);
+    animation:unfoldIn 1s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+
+    .modal-background {
+      .modal,
+      .modal-close {
+        transform:scale(0);
+        animation: zoomIn .5s .8s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+      }
+    }
+    &.out {
+      transform:scale(1);
+      animation:unfoldOut 1s .3s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+      .modal-background {
+        .modal,
+        .modal-close {
+          animation: zoomOut .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+        }
+      }
+    }
+  }
+}
+
+.modal-background {
+  display:flex;  
+  width: 100%;
+  background: linear-gradient(180deg, #F2F207 0%, #F0D50A 100%);
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 20;
+  .modal {
+    padding:15px;
+    padding-top: 40px;
+    display: block;
+    position:relative;
+    z-index: 30;
+    color: #1B3428;
+    text-align: center;
+    height: 100%;
+    overflow-y: auto;
+    h2 {
+      font-size:34px;
+      margin-bottom:48px;
+    }
+
+    p {
+      font-size: 14px;
+      font-weight: 500;
+    }
+  }
+}
+
+@keyframes unfoldIn {
+  0% {
+    transform:scaleY(.005) scaleX(0);
+  }
+  50% {
+    transform:scaleY(.005) scaleX(1);
+  }
+  100% {
+    transform:scaleY(1) scaleX(1);
+  }
+}
+
+@keyframes unfoldOut {
+  0% {
+    transform:scaleY(1) scaleX(1);
+  }
+  50% {
+    transform:scaleY(.005) scaleX(1);
+  }
+  100% {
+    transform:scaleY(.005) scaleX(0);
+  }
+}
+
+@keyframes zoomIn {
+  0% {
+    transform:scale(0);
+  }
+  100% {
+    transform:scale(1);
+  }
+}
+
+@keyframes zoomOut {
+  0% {
+    transform:scale(1);
+  }
+  100% {
+    transform:scale(0);
+  }
+}

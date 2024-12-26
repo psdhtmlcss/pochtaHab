@@ -7,7 +7,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/scss/style.scss">
+  <link rel="stylesheet" href="./scss/style.scss">
+  <script src="./index.js" defer></script>
 </head>
 <body>
   <svg class="bg" width="393" height="794" viewBox="0 0 393 794" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -44,9 +45,35 @@
     <div class="container">
       <h1>Мы не доставляем, <span>мы гарантируем!</span><br>Точность с <span>ИИ</span></h1>
       <p>Если мы не укладываемся в срок, вы не платите. ПочтаХаб — новая эра доставки.</p>
-      <button type="button" class="button">Попробовать бесплатно</button>
+      <button id="one" type="button" class="button js-button">Попробовать бесплатно</button>
     </div>
   </main>
   <footer class="footer">© 2024</footer>
+  <div id="modal-container">
+    <div class="modal-background">
+      <button type="button" class="modal-close js-modal-close">
+        <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g clip-path="url(#clip0_2023_145)">
+          <path d="M2.5 25L0 22.5L10 12.5L0 2.5L2.5 0L12.5 10L22.5 0L25 2.5L15 12.5L25 22.5L22.5 25L12.5 15L2.5 25Z" fill="#1B3428"/>
+          </g>
+          <defs>
+          <clipPath id="clip0_2023_145">
+          <rect width="25" height="25" fill="white"/>
+          </clipPath>
+          </defs>
+        </svg>          
+      </button>
+      <div class="modal">
+        <h2>Получите доступ к ИИ доставке</h2>
+        <form>
+          <input type="text" class="form-control" placeholder="Имя:">
+          <input type="text" class="form-control" placeholder="Телефон:">
+          <input type="email" class="form-control" placeholder="Email:">
+          <button type="button" class="button button-green">Оставить заявку</button>
+        </form>
+        <p>Мы гарантируем конфиденциальность ваших данных</p>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
