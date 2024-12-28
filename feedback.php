@@ -1,12 +1,11 @@
 <?php
-  $field_name: $_GET['nameInput'];
+  $field_name = $_GET['nameInput'];
   $field_phone = $_GET['phoneInput'];
-  $filed_email = $_GET['emailInput'];
 
   $mail_to = 'pochtoviy-yashik@mail.ru';
   $subject = 'Обратный звонок '.$field_phone;
 
-  $body_message = 'Имя: '.$field_name."\n".'Телефон '.$field_phone."\n".'Email: '.$field_email;
+  $body_message = 'Имя: '.$field_name."\n".'Телефон '.$field_phone."\n";
 
   $headers = 'From: '.$E-Mail."\r\n";
   $headers .= 'Reply-To: '.$E-Mail."\r\n";

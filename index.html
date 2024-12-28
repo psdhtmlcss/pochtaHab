@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./scss/style.scss">
-  <script src="./index.js" defer></script>
+  <script src="./index.js" type="module" defer></script>
 </head>
 <body>
   <svg class="bg" width="393" height="794" viewBox="0 0 393 794" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -46,6 +46,9 @@
       <h1>Мы не доставляем, <span>мы гарантируем!</span><br>Точность с <span>ИИ</span></h1>
       <p>Если мы не укладываемся в срок, вы не платите. ПочтаХаб — новая эра доставки.</p>
       <button id="one" type="button" class="button js-button">Попробовать бесплатно</button>
+      <div class="image">
+        <img src="./robot.webp" alt="">
+      </div>
     </div>
   </main>
   <footer class="footer">© 2024</footer>
@@ -65,11 +68,10 @@
       </button>
       <div class="modal">
         <h2>Получите доступ к ИИ доставке</h2>
-        <form action="feedback.php" method="post">
-          <input type="text" class="form-control" placeholder="Имя:">
-          <input type="text" class="form-control" placeholder="Телефон:">
-          <input type="email" class="form-control" placeholder="Email:">
-          <button type="button" class="button button-green">Оставить заявку</button>
+        <form action="feedback.php">
+          <input type="text" class="form-control js-name-input" name="nameInput" placeholder="Имя:" autocomplete="off" required>
+          <input type="text" class="form-control js-phone-input" name="phoneInput" placeholder="Телефон:" autocomplete="off" required>
+          <button type="submit" class="button button-green">Оставить заявку</button>
         </form>
         <p>Мы гарантируем конфиденциальность ваших данных</p>
       </div>
