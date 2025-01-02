@@ -2,7 +2,7 @@
   $field_name = $_GET['nameInput'];
   $field_phone = $_GET['phoneInput'];
 
-  $mail_to = 'pochtoviy-yashik@mail.ru';
+  $mail_to = 'info@dostavka.info';
   $subject = 'Обратный звонок '.$field_phone;
 
   $body_message = 'Имя: '.$field_name."\n".'Телефон '.$field_phone."\n";
