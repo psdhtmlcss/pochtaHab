@@ -31,7 +31,6 @@ const onModalCloseButtonClick = (evt) => {
   body.classList.remove('modal-active');
 }
 const onRadiosChange = (evt) => {
-  console.log(evt.currentTarget.value);
   switch(evt.currentTarget.value) {
     case ContactsMethod.EMAIL:
       phoneInput.required = false;

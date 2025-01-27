@@ -163,6 +163,16 @@ form {
   }
 }
 
+.contact-method {
+  strong {
+    @media screen and (max-width: 767px) {
+      display: block;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+  }
+}
+
 .modal-close {
   position: absolute;
   z-index: 40;
