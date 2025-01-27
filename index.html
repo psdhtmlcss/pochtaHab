@@ -93,8 +93,14 @@
         <h2>Хотите попробовать? Мы расскажем, как это работает!</h2>
         <p>Оставьте ваш контакт, чтобы получить больше информации о ПочтаХаб.</p>
         <form action="feedback.php">
-          <input type="text" class="form-control js-name-input" name="nameInput" placeholder="Имя:" autocomplete="off" required>
-          <input type="text" class="form-control js-phone-input" name="phoneInput" placeholder="Телефон:" autocomplete="off" required>
+          <input type="text" class="form-control js-name-input" name="nameInput" placeholder="Имя *:" autocomplete="off" required>
+          <div class="contact-method">
+            <strong>Как с вами связаться:</strong>
+            <label><input type="radio" name="contactMethod" value="phoneMethod" checked> По телефону</label>
+            <label><input type="radio" name="contactMethod" value="emailMethod"> По email</label>
+          </div>
+          <input type="text" class="form-control js-phone-input" name="phoneInput" placeholder="Телефон *:" autocomplete="off" required>
+          <input type="email" class="form-control js-email-input" name="emailInput" placeholder="Email *:" autocomplete="off" style="display: none;">
           <button type="submit" class="button button-green" onclick="ym(99367867,'reachGoal','конверсия')">Оставить заявку</button>
         </form>
         <p>Мы гарантируем конфиденциальность ваших данных. Свяжемся с вами в течение 24 часов.</p>
